@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+    	<meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+        <title>SIC-XE</title>
+    </head>
+
+    <body>
+
+        <form action="/" method="POST" class="container">
+            <br>
+            <h4>Enter Program.asm</h4>
+            <br>
+            <textarea name="program" class="form-control rounded-0" rows="25"></textarea>
+            <br>
+            <input type="submit" value="SUBMIT" class="btn btn-primary text-center">
+        </form>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+        <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+    </body>
+</html>
