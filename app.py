@@ -1,6 +1,6 @@
 from flask import Flask ,render_template ,redirect ,url_for ,request
 import os
-# import subprocess
+
 app = Flask(__name__)
 
 @app.route("/",methods=['POST','GET'])
@@ -9,11 +9,6 @@ def home():
 		return render_template('index.html')
 	else:
 		program = request.form['program']
-		#print(program)
-		#print(symtab)
-
-		#write code to compile noth .sh
-		#command line output to result
 
 		file1 = open("program.asm", "w+")
 		file1.write(program)
@@ -21,12 +16,6 @@ def home():
 		os.system("sh pass1.sh")
 		os.system("sh pass2.sh")
 		os.system("./pass1")
-
-		# command = "./pass2"
-		# p = subprocess.Popen(command,stdout=subprocess.PIPE,stderr=subprocess.STDOUT)
-		# q = iter(p.stdout.readline, b'')
-		# os.system("clear")
-		# print(q)
 		os.system("./pass2")
 
 		file2 = open("symbol.txt","r")
